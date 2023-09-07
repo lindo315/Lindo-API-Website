@@ -3,12 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>S.L.R Website</title>
+  <meta name="description" content="Get the latest solar events, and cosmic phenomena updates on my website.">
+  <meta name="keywords" content="space weather, solar activity, cosmic events, space phenomena">
+  <title>Solar Flare Website</title>
+
+  <link href="https://fonts.cdnfonts.com/css/nasa" rel="stylesheet">
+  <style>@import url('https://fonts.cdnfonts.com/css/nasa');</style>
+
+  <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
+  <style>@import url('https://fonts.cdnfonts.com/css/helvetica-neue-5');</style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 
   <link rel="stylesheet" href="styles.css">
 
-  <script src="nasa.js"></script>
+  
+  <script src="diagrams.js"></script>
   <script src="scroll.js"></script>
+  <script src="indicator.js"></script>
   
 </head>
 <body class="body">
@@ -25,6 +37,7 @@
         <ul class="link-list">
           <li class="list"><a class="a" href="#home">Home</a></li>
           <li class="list"><a class="a" href="#about">About</a></li>
+          <li class="list"><a class="a" href="#more">Flares</a></li>
           <li class="list"><a class="a" href="#data">Data</a></li>
           <li class="list"><a class="a" href="#sources">Sources</a></li>
         </ul>
@@ -41,7 +54,7 @@
           SOLAR FLARES
         </h1>
 
-        <h2 class="exploring">
+        <h2 class="power">
           Exploring the Power of the Sun
         </h2>
       </div>
@@ -50,33 +63,27 @@
 
   <main>
     <section id="about">
+      <div class="box-div1"></div>
+      <div class="box-div2"></div>
       <div class="about-text">
-        <h1 class="solar">
+        <h1 class="solar-about">
           ABOUT
         </h1>
 
         <h2 class="exploring">
-          This is a short website about Solar Flares, how they form, why they form and their impact on Earth.
-        </h2>
-
-        <h2 class="exploring">
-          Here you will find live data from a NASA API that tracks active events in space, in the case of this website, Solar Flares.
-        </h2>
+          This is a short website about Solar Flares, how they form, why they form and their impact on Earth. Here you will find live data from a NASA API that tracks active events in space, in the case of this website, Solar Flares.
       </div>
-
+      
       <div class="about-flares">
         <h1 class="whatSolar">
           What are Solar Flares?
         </h1>
 
-        <h2 class="what-theyAre">
-          Solar flares are spectacular eruptions of magnetic energy from the Sun's surface, captivating us with their cosmic brilliance. These intense bursts unleash an unimaginable amount of energy within minutes, creating awe-inspiring displays in the universe.
-        </h2>
-
-        <h3 class="what-theyAre">
-          Rooted in the Sun's dynamic magnetic field, solar flares arise when tangled magnetic lines release their pent-up energy, resulting in vibrant emissions across the electromagnetic spectrum. These eruptions have real-world implications, impacting Earth's technology and communications during geomagnetic storms.
-        </h3>
+        <h2 class="exploring">
+          Rooted in the Sun's dynamic magnetic field, solar flares arise when <span class="orange-root">tangled magnetic lines</span>  release their pent-up energy, resulting in vibrant emissions across the <span class="orange-root">electromagnetic spectrum</span>. These eruptions have real-world implications, impacting Earth's technology and communications during geomagnetic storms.
+        </h2>  
       </div>
+
     </section>
 
     <section id="more">
@@ -94,13 +101,13 @@
         <div class="how-container">
           <div class="image"></div>
           <h1 class="sun-text">
-            Magnetic Stress: The Sun's dynamic magnetic field becomes twisted and stressed due to its intense activity.
+            <span class="orange-root">Magnetic Stress</span>: The Sun's dynamic magnetic field becomes twisted and stressed due to its intense activity.
           </h1>
         </div>
   
         <div class="how-container">
           <h1 class="sun-text">
-            Energy Buildup: Energy accumulates within the tangled magnetic field lines, creating a reservoir of potential power.
+            <span class="orange-root">Energy Buildup</span>: Energy accumulates within the tangled magnetic field lines, creating a reservoir of potential power.
           </h1>
           <div class="image2"></div>
         </div>
@@ -108,13 +115,13 @@
         <div class="how-container">
           <div class="image3"></div>
           <h1 class="sun-text">
-            Flare Eruption: Magnetic field lines suddenly reconfigure and realign, releasing a burst of energy in the form of X-rays, ultraviolet light, and charged particles.
+            <span class="orange-root">Flare Eruption</span>: Magnetic field lines suddenly reconfigure and realign, releasing a burst of energy in the form of X-rays, ultraviolet light, and charged particles.
           </h1>
         </div>
 
         <div class="how-container">
           <h1 class="sun-text">
-            Radiant Display: The released energy produces a dazzling display of light across the electromagnetic spectrum, forming the characteristic glow of a solar flare.
+            <span class="orange-root">Radiant Display</span>: The released energy produces a dazzling display of light across the electromagnetic spectrum, forming the characteristic glow of a solar flare.
           </h1>
           <div class="image4"></div>
         </div>
@@ -122,9 +129,20 @@
         <div class="how-container">
           <div class="image5"></div>
           <h1 class="sun-text">
-            Geomagnetic Impact: If Earth-directed, the charged particles from the flare can reach our planet, causing geomagnetic storms that may disrupt satellites, power grids, and communication systems.
+            <span class="orange-root">Geomagnetic Impact</span>: If Earth-directed, the charged particles from the flare can reach our planet, causing geomagnetic storms that may disrupt satellites, power grids, and communication systems.
           </h1>
         </div>
+      </div>
+
+      <div class="image-div">
+        <h1 class="whatSolar">
+          What does this look like?
+        </h1>
+
+        <h2 class="data-info">
+          Below is a diagram illustrating the process of a <span class="orange-root">Solar Flare</span> as it travels throughout space. During this phase, it is referred to as a <span class="orange-root">Solar Wind</span>.
+        </h2>
+        <img class="geo-image" src="solarwind.jpg">
       </div>
       
     </section>
@@ -136,7 +154,7 @@
         </h1>
 
         <h2 class="data-info">
-          Below is some of the live data from the NASA API, detailing solar events using different data visualization techniques.
+          Below is some of the live data from the <span class="orange-root">NASA API</span>, detailing solar events using different <span class="orange-root">data visualization</span> techniques.
         </h2>
       </div>
 
@@ -170,6 +188,8 @@
         </div>
         <div class="d-t30 data-col">
           <h1>Pie Chart</h1>
+
+          <div id="pie-chart"></div>
         </div>
       </div>
     </section>

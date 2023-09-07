@@ -9,10 +9,18 @@ async function fetchDataAndProcess() {
 
     const data = await response.json();
 
-    // Access and process the 'classType' data
+    // Access and process the 'classType', 'beginTime', 'peakTime', and 'endTime' data
     data.forEach(item => {
       const flareClassType = item.classType;
-      console.log(flareClassType); // Log the 'classType' for each object in the array
+      const beginTime = item.beginTime;
+      const peakTime = item.peakTime;
+      const endTime = item.endTime;
+
+      console.log(`Class Type: ${flareClassType}`);
+      console.log(`Begin Time: ${beginTime}`);
+      console.log(`Peak Time: ${peakTime}`);
+      console.log(`End Time: ${endTime}`);
+      
       // You can perform further processing or visualization here
     });
 
@@ -24,7 +32,4 @@ async function fetchDataAndProcess() {
 fetchDataAndProcess();
 
 
-
 var prevScroll = window.pageYOffset;
-
-
