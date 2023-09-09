@@ -411,7 +411,7 @@ section#more
 
 section#data
 {
-  height: 200vh;
+  height: 280vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -494,8 +494,9 @@ section#sources
   height: 100vh;
   width: 80%;
   margin-top: 100px;
+  margin-bottom: 200px;
   margin-left: 50px;
-  grid-template: 200px auto / 3fr 7fr;
+  grid-template: 200px 800px / 3fr 7fr;
   column-gap: 10px;
   row-gap: 10px;
   grid-template-areas: 
@@ -516,6 +517,7 @@ section#sources
 .d-t3
 {
   grid-column: footer;
+  text-align: center;
 }
 
 

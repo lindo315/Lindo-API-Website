@@ -8,13 +8,7 @@ async function fetchDataAndProcess() {
     }
 
     const data = await response.json();
-
-    // Access and process the 'classType' data
-    data.forEach(item => {
-      const flareClassType = item.classType;
-      console.log(flareClassType); // Log the 'classType' for each object in the array
-      // You can perform further processing or visualization here
-    });
+    console.log(data);
 
   } catch (error) {
     console.error('Error fetching data:', error);
