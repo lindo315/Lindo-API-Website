@@ -1,4 +1,3 @@
-// Function to fetch data and process it
 async function fetchDataAndProcess() {
   try {
     const url = 'https://api.nasa.gov/DONKI/FLR?startDate=yyyy-MM-dd&endDate=yyyy-MM-dd&api_key=FYw9fNRv8ac2av2x7fDwTIpfoxqIdBWiQ6TbM7u9';
@@ -11,15 +10,15 @@ async function fetchDataAndProcess() {
     const data = await response.json();
     console.log(data);
 
-    // Process the data and create the scatter plot
-    createScatterPlot(data); // Call the function to create the scatter plot
+    // Process the data and create the Scatter plot
+    createScatterPlot(data); // Call Scatter plot
 
   } catch (error) {
     console.error('Error fetching data:', error);
   }
 }
 
-// Function to create the scatter plot
+// Function for Scatter plot
 function createScatterPlot(flaresData) {
 
   const margin = { top: 20, right: 30, bottom: 40, left: 50 };
@@ -65,7 +64,7 @@ function createScatterPlot(flaresData) {
     .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
-  // Create circles for data points
+  // Circles for data points
   svg.selectAll("circle.begin")
     .data(formattedData)
     .enter()
@@ -93,7 +92,7 @@ function createScatterPlot(flaresData) {
     .attr("cy", d => yScale(d.endTime))
     .attr("r", 3);
 
-  // Create labels for begin time, peak time, and end time
+  // Labels for begin time, peak time, and end time
   svg.selectAll("text")
     .data(formattedData)
     .enter()
@@ -110,19 +109,19 @@ function createScatterPlot(flaresData) {
     .attr("y", d => yScale(d.endTime) + 30)
     .text(d => `End: ${d.endTime.toFixed(2)}`);
 
-  // Create x-axis
+  // X-axis
   const xAxis = d3.axisBottom(xScale);
   svg.append("g")
     .attr("class", "x-axis")
     .attr("transform", `translate(0, ${height})`)
     .call(xAxis);
 
-  // Create y-axis
+  // Y-axis
   const yAxis = d3.axisLeft(yScale);
   svg.append("g")
     .attr("class", "y-axis")
     .call(yAxis);
 }
 
-// Call the data fetching and processing function
+//Calling
 fetchDataAndProcess();

@@ -108,9 +108,15 @@
   -webkit-text-fill-color: transparent;
 }
 
-.orange-root
+.orange-root,
+.bold
 {
   color: #ff6600;
+}
+
+.bold
+{
+  font-weight: bold;
 }
 
 
@@ -625,10 +631,16 @@ section#art-section
 }
 
 
-.text
+.text,
+.text-ref
 {
   text-align: center;
   font-size: 20px;
+}
+
+.text-ref
+{
+  margin-top: 20px;
 }
 
 
@@ -651,4 +663,84 @@ section#art-section
   font-size: 20px; /* Adjust font size */
   font-weight: bold; /* Apply bold style */
   fill: black; /* Set text color to white */
+}
+
+
+.style-title
+{
+  font-size: 30px;
+  padding-left: 40px;
+  padding-top: 40px;
+  color: #0F2027;
+  font-weight: bold;
+  background: -webkit-linear-gradient(#858585, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.design-li
+{
+  padding-left: 50px;
+  padding-top: 20px;
+}
+
+.style-li
+{
+  font-size: 20px;
+  width: 900px;
+  padding-bottom: 10px;
+}
+
+.nest-list
+{
+  padding-left: 20px;
+}
+
+
+
+.back-link
+{
+  text-decoration: none;
+}
+
+.go-back
+{
+  color: #002240;
+}
+
+.go-back:hover
+{
+  color: #ff6600;
+}
+
+#scrollUpButton
+{
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  background: none;
+  rotate: 90deg;
+  font-size: 70px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#scrollUpButton:hover
+{
+  color: #ff6600;
+}
+
+
+.main
+{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.footer,
+.main
+{
+  padding-bottom: 80px;
 }

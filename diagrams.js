@@ -5,7 +5,7 @@ async function fetchDataAndProcess() {
     const endDate = new Date();
     endDate.setDate(currentDate.getDate() + 5);
 
-    // Format the dates in yyyy-MM-dd format
+    // Format the dates in yyyy-MM-dd?
     const startDateString = currentDate.toISOString().split('T')[0];
     const endDateString = endDate.toISOString().split('T')[0];
     
@@ -18,7 +18,7 @@ async function fetchDataAndProcess() {
 
     const data = await response.json();
 
-    // Access and process the 'classType', 'beginTime', 'peakTime', and 'endTime' data
+    // Access and process the classType, beginTime, peakTime, and 'ndTime data
     data.forEach(item => {
       const flareClassType = item.classType;
       const beginTime = item.beginTime;
@@ -29,10 +29,8 @@ async function fetchDataAndProcess() {
       console.log(`Begin Time: ${beginTime}`);
       console.log(`Peak Time: ${peakTime}`);
       console.log(`End Time: ${endTime}`);
-      
-      // You can perform further processing or visualization here
 
-      // Create a pie chart for 'classType'
+      // Pie chart for 'classType'
       createPieChart(data);
     });
 
@@ -42,10 +40,10 @@ async function fetchDataAndProcess() {
 }
 
 async function createPieChart(data) {
-  // Define the main classes (X, M, C, B, A)
+  // Main classes (X, M, C, B, A)
   const mainClasses = ['X', 'M', 'C', 'B', 'A'];
 
-  // Create an object to store the counts for each main class
+  // Object to store the counts for each main class
   const mainClassCounts = {};
 
   // Initialize counts to zero for each main class
@@ -55,7 +53,7 @@ async function createPieChart(data) {
 
   // Aggregate counts for each main class
   data.forEach(item => {
-    const classType = item.classType.charAt(0); // Get the first character (main class)
+    const classType = item.classType.charAt(0); // Get the first main class?
     if (mainClasses.includes(classType)) {
       mainClassCounts[classType]++;
     }
@@ -71,23 +69,23 @@ async function createPieChart(data) {
       count: mainClassCounts[mainClass],
       percentage: (mainClassCounts[mainClass] / totalCount) * 100
     }))
-    .filter(item => item.count > 0); // Filter out classes with 0% occurrence
+    .filter(item => item.count > 0); // Rid away classes with 0% occurrence
 
-  // Set up the dimensions for the pie chart
+  //Pie chart dimensions
   const width = 600;
   const height = 600;
   const radius = Math.min(width, height) / 2;
 
-  // Create a custom color scale based on main classes
+  //Colors for main classes
   const colorScale = d3
     .scaleOrdinal()
     .domain(pieData.map(d => d.mainClass))
     .range(['#ff6600', 'orange', 'yellow', 'green', 'blue']);
 
-  // Create a pie layout
+  //Pie layout
   const pie = d3.pie().value(d => d.count);
 
-  // Create an SVG element for the pie chart
+  //SVG element for pie chart
   const svg = d3
     .select('#pie-chart')
     .html('') // Clear any existing content
@@ -97,7 +95,7 @@ async function createPieChart(data) {
     .append('g')
     .attr('transform', `translate(${width / 2},${height / 2})`);
 
-  // Generate the pie chart slices
+  //Pie chart slices
   const arc = d3.arc().innerRadius(0).outerRadius(radius);
 
   const arcs = svg.selectAll('arc').data(pie(pieData)).enter().append('g');
@@ -107,7 +105,7 @@ async function createPieChart(data) {
     .attr('d', arc)
     .attr('fill', d => colorScale(d.data.mainClass)); // Use the custom color scale
 
-  // Add text labels with percentage to the pie chart slices
+  //Text labels with percentage
   arcs
     .append('text')
     .attr('transform', d => `translate(${arc.centroid(d)})`)
