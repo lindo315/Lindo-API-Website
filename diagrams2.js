@@ -19,10 +19,6 @@ async function fetchDataAndProcess() {
   }
 }
 
-
-
-
-
 // Function to create the scatter plot
 function createScatterPlot(flaresData) {
 
@@ -59,7 +55,7 @@ function createScatterPlot(flaresData) {
     .range([0, width]);
 
   const yScale = d3.scaleLinear()
-    .domain([0, 12])
+    .domain([0, 24])
     .range([height, 0]);
 
   const svg = d3.select("#scatter-plot")
@@ -77,7 +73,7 @@ function createScatterPlot(flaresData) {
     .attr("class", "begin")
     .attr("cx", d => xScale(new Date(d.date)))
     .attr("cy", d => yScale(d.beginTime))
-    .attr("r", 5);
+    .attr("r", 3);
 
   svg.selectAll("circle.peak")
     .data(formattedData)
@@ -86,7 +82,7 @@ function createScatterPlot(flaresData) {
     .attr("class", "peak")
     .attr("cx", d => xScale(new Date(d.date)))
     .attr("cy", d => yScale(d.peakTime))
-    .attr("r", 5);
+    .attr("r", 3);
 
   svg.selectAll("circle.end")
     .data(formattedData)
@@ -95,7 +91,7 @@ function createScatterPlot(flaresData) {
     .attr("class", "end")
     .attr("cx", d => xScale(new Date(d.date)))
     .attr("cy", d => yScale(d.endTime))
-    .attr("r", 5);
+    .attr("r", 3);
 
   // Create labels for begin time, peak time, and end time
   svg.selectAll("text")
