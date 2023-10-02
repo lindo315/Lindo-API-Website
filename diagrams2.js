@@ -21,22 +21,16 @@ async function fetchDataAndProcess() {
 // Function for Scatter plot
 function createScatterPlot(flaresData) {
 
-  const margin = { top: 20, right: 30, bottom: 40, left: 50 };
+  const margin = { top: 20, right: 20, bottom: 50, left: 60 }; // Adjusted bottom margin for axis labels
   const width = 900 - margin.left - margin.right;
-  const height = 700 - margin.top - margin.bottom;
+  const height = 600 - margin.top - margin.bottom;
 
   const formattedData = flaresData.map(entry => {
     const beginTime = new Date(entry.beginTime);
-    const peakTime = new Date(entry.peakTime);
-    const endTime = new Date(entry.endTime);
   
     // Extract time of day as hours and minutes
     const beginHour = beginTime.getHours();
     const beginMinute = beginTime.getMinutes();
-    const peakHour = peakTime.getHours();
-    const peakMinute = peakTime.getMinutes();
-    const endHour = endTime.getHours();
-    const endMinute = endTime.getMinutes();
   
     // Extract date
     const date = beginTime.toISOString().split('T')[0]; // Get YYYY-MM-DD
@@ -44,8 +38,6 @@ function createScatterPlot(flaresData) {
     return {
       date,
       beginTime: beginHour + beginMinute / 60,
-      peakTime: peakHour + peakMinute / 60,
-      endTime: endHour + endMinute / 60,
     };
   });
 
@@ -74,40 +66,14 @@ function createScatterPlot(flaresData) {
     .attr("cy", d => yScale(d.beginTime))
     .attr("r", 3);
 
-  svg.selectAll("circle.peak")
-    .data(formattedData)
-    .enter()
-    .append("circle")
-    .attr("class", "peak")
-    .attr("cx", d => xScale(new Date(d.date)))
-    .attr("cy", d => yScale(d.peakTime))
-    .attr("r", 3);
-
-  svg.selectAll("circle.end")
-    .data(formattedData)
-    .enter()
-    .append("circle")
-    .attr("class", "end")
-    .attr("cx", d => xScale(new Date(d.date)))
-    .attr("cy", d => yScale(d.endTime))
-    .attr("r", 3);
-
-  // Labels for begin time, peak time, and end time
+  // Labels for begin time
   svg.selectAll("text")
     .data(formattedData)
     .enter()
     .append("text")
     .attr("x", d => xScale(new Date(d.date)) + 10)
     .attr("y", d => yScale(d.beginTime))
-    .text(d => `Begin: ${d.beginTime.toFixed(2)} (${d.date})`)
-    .append("tspan")
-    .attr("x", d => xScale(new Date(d.date)) + 10)
-    .attr("y", d => yScale(d.peakTime) + 15)
-    .text(d => `Peak: ${d.peakTime.toFixed(2)}`)
-    .append("tspan")
-    .attr("x", d => xScale(new Date(d.date)) + 10)
-    .attr("y", d => yScale(d.endTime) + 30)
-    .text(d => `End: ${d.endTime.toFixed(2)}`);
+    .append("tspan");
 
   // X-axis
   const xAxis = d3.axisBottom(xScale);
@@ -121,6 +87,22 @@ function createScatterPlot(flaresData) {
   svg.append("g")
     .attr("class", "y-axis")
     .call(yAxis);
+
+  // Add axis labels
+  svg.append("text")
+    .attr("class", "x-axis-label")
+    .attr("x", width / 2)
+    .attr("y", height + 40) // Adjusted position for the x-axis label
+    .style("text-anchor", "middle")
+    .text("Dates");
+
+  svg.append("text")
+    .attr("class", "y-axis-label")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -height / 2)
+    .attr("y", -40) // Adjusted position for the y-axis label
+    .style("text-anchor", "middle")
+    .text("Time (hours)");
 }
 
 //Calling

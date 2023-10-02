@@ -12,13 +12,9 @@ async function fetchDataAndProcess() {
     data.forEach(item => {
       const flareClassType = item.classType;
       const beginTime = item.beginTime;
-      const peakTime = item.peakTime;
-      const endTime = item.endTime;
 
       console.log(`Class Type: ${flareClassType}`);
       console.log(`Begin Time: ${beginTime}`);
-      console.log(`Peak Time: ${peakTime}`);
-      console.log(`End Time: ${endTime}`);
     });
 
   } catch (error) {
