@@ -150,8 +150,15 @@
 .source-info
 {
   width: 800px;
+  font-size: 20px;
+  font-weight: bold;
   text-align: center;
   color: #000C40;
+}
+
+.data-info
+{
+  margin-top: 15px;
 }
 
 
@@ -177,6 +184,7 @@
 .exploring
 {
   width: 700px;
+  font-weight: bold;
 }
 
 .wind
@@ -299,6 +307,8 @@ section#home
 .sun-text
 {
   width: 500px;
+  font-weight: bold;
+  font-size: 23px;
   color: #002240;
 }
 
