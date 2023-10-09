@@ -49,6 +49,138 @@
   -webkit-text-fill-color: transparent;
 }
 
+.logoDiv
+{
+  display: flex;
+  align-items: center;
+}
+
+.list
+{
+  list-style: none;
+}
+
+#id-navigation
+{
+  background-image: linear-gradient(to right, #530f1e, #051427);
+  backdrop-filter: blur(10px);
+}
+
+#id-navigation
+{
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+  transition: top 0.3s;
+}
+
+
+
+
+/* Style for the active link in the navigation bar */
+.navbar .link-list .list .a.active
+{
+  font-weight: bold;
+  color: #ff6600; /* Highlight color */
+}
+
+
+.link-list
+{
+  display: flex;
+  gap: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+}
+
+.navbar
+{
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.navbar-links
+{
+  display: flex;
+  gap: 5rem;
+  margin-top: 0.5rem;
+  margin-right: 5rem;
+}
+
+
+.navbar .toggle-btn
+{
+  color: #fafafa;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 30px;
+  display: none;
+}
+
+
+/*DROPDOWN MENU*/
+.dropdown-menu
+{
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  margin-top: 60px;
+  height: 0;
+  width: 300px;
+  background-color: rgba(35, 35, 35, 0.767);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  transition: height .2s cubic-bezier(0.15, 0.885, 0.32, 1.275);
+}
+
+.dropdown-menu.open
+{
+  height: 240px;
+}
+
+.dropdown-menu .list
+{
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/*RESPONSIVE DESIGN*/
+@media(max-width: 768px)
+{
+  .link-list
+  {
+    display: none;
+  }
+
+  .navbar .toggle-btn
+  {
+    display: block;
+  }
+
+  .dropdown-menu
+  {
+    display: block;
+  }
+}
+
+
+
+
+
+
 
 .data-title,
 .source,
@@ -206,59 +338,7 @@
 
 
 
-.logoDiv
-{
-  display: flex;
-  align-items: center;
-}
 
-.list
-{
-  list-style: none;
-}
-
-#id-navigation
-{
-  background-image: linear-gradient(to right, #530f1e, #051427);
-  backdrop-filter: blur(10px);
-}
-
-#id-navigation
-{
-  position: fixed;
-  width: 100%;
-  z-index: 2;
-  top: 0;
-  transition: top 0.3s;
-}
-
-.navbar
-{
-  max-width: 100%;
-  margin: 0 auto;
-  height: 100px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-
-/* Style for the active link in the navigation bar */
-.navbar .link-list .list .a.active
-{
-  font-weight: bold;
-  color: #ff6600; /* Highlight color */
-}
-
-
-.link-list
-{
-  display: flex;
-  gap: 3rem;
-  margin-top: 0.5rem;
-  margin-right: 1rem;
-}
 
 /*WEBSITE SECTIONS*/
 section#home
@@ -429,7 +509,7 @@ section#more
 
 section#data
 {
-  height: 280vh;
+  height: 400vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -763,3 +843,113 @@ section#art-section
 {
   margin-top: 50px;
 }
+
+#chart-container
+{
+  max-width: 100%;
+}
+
+
+
+
+/*RESPONSIVE DESIGN*/
+@media(max-width: 768px)
+{
+  section#home
+  {
+    height: 100vh;
+    margin-top: 0px;
+    background-size: cover;
+  }
+
+  #id-navigation
+  {
+    width: 768px;
+  }
+
+  .logo,
+  .data-title,
+  .source,
+  .solar-about,
+  .whatSolar,
+  .solar-how
+  {
+    font-size: 40px;
+  }
+
+  .solar
+  {
+    font-size: 60px;
+  }
+
+  .title
+  {
+    font-size: 20px;
+  }
+
+  .navbar
+  {
+    height: 60px;
+    width: 768px;
+  }
+
+
+  section#about
+  {
+    height: 100vh;
+    padding: 100px;
+  }
+
+  .box-div1,
+  .box-div2
+  {
+    display: none;
+  }
+
+
+  section#more
+  {
+    height: auto;
+  }
+
+  .data-info,
+  .source-info
+  {
+    width: 600px;
+  }
+
+
+  section#data,
+  section#sources
+  {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  section#data
+  {
+    height: auto;
+  }
+
+  section#sources
+  {
+    height: 100vh;
+    padding-top: 100px;
+  }
+}
+
+
+#live-data {
+  position: absolute;
+  background-color: #c9c9c9;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  pointer-events: none;
+  font-size: 14px;
+  
+  z-index: 2;
+}
+
+
+

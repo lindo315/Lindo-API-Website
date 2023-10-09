@@ -64,7 +64,8 @@ function createScatterPlot(flaresData) {
     .attr("class", "begin")
     .attr("cx", d => xScale(new Date(d.date)))
     .attr("cy", d => yScale(d.beginTime))
-    .attr("r", 3);
+    .attr("r", 3)
+    
 
   // Labels for begin time
   svg.selectAll("text")
