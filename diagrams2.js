@@ -106,5 +106,5 @@ function createScatterPlot(flaresData) {
     .text("Time (hours)");
 }
 
-//Calling
+//Calling the graph
 fetchDataAndProcess();

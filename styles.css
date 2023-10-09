@@ -938,6 +938,11 @@ section#art-section
   }
 }
 
+#scatter-plot
+{
+  width: 100%;
+}
+
 
 #live-data {
   position: absolute;
