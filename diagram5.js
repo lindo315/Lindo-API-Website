@@ -11,7 +11,7 @@ async function fetchDataAndProcess1() {
     console.log(data);
 
     // Process the data and create the Active graph
-    createLinePlot(data); // Call Active graph
+    createLinePlot(data, liveDataContent); // Call Active graph
     createLinePlot2(data); // Call Active graph
     createLinePlot3(data); // Call Active graph
 
@@ -24,7 +24,7 @@ async function fetchDataAndProcess1() {
 const liveDataContent = document.getElementById("live-data-content");
 
 // Create a fourth graph for events that occurred in the first 9 days, excluding the latest 18 days
-function createLinePlot(flaresData) {
+function createLinePlot(flaresData, liveDataContent) {
   const margin = { top: 20, right: 20, bottom: 50, left: 60 };
   const width = 900 - margin.left - margin.right;
   const height = 600 - margin.top - margin.bottom;
@@ -77,17 +77,33 @@ function createLinePlot(flaresData) {
         tooltip.transition()
           .duration(200)
           .style("opacity", 0.9);
-
+    
         d3.select(this)
           .transition()
           .duration(200)
           .attr("r", 6)
           .style("fill", "orange");
-
+    
         // Display data in the live data content
-        const liveDataContent = document.getElementById("live-data-content");
-        liveDataContent.innerHTML = "Date: " + d.beginTime;
+        liveDataContent.innerHTML = "Date: " + d.date;
+    
+        // Position and show the tooltip
+        tooltip.html("Date: " + d.date)
+          .style("left", (d3.event.pageX + 10) + "px")
+          .style("top", (d3.event.pageY - 10) + "px")
+          .style("opacity", 0.9);
       }
+    })
+    .on("mouseout", function () {
+      tooltip.transition()
+        .duration(500)
+        .style("opacity", 0);
+    
+      d3.select(this)
+        .transition()
+        .duration(200)
+        .attr("r", 4)
+        .style("fill", "green");
     })
     .on("mouseout", function () {
       tooltip.transition()
