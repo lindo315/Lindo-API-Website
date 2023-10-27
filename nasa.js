@@ -28,12 +28,20 @@ async function fetchDataAndProcess() {
       throw new Error('Network response was not ok.');
     }
 
+    // Styling parameters
+    const svgBackgroundColor = 'linear-gradient(to bottom, #ffffff, #c0c0c0)';
+    const borderColor = '1px solid #333';
+
     createSVG();
+
+    // Apply styles to the SVG
+    svg.style('background', svgBackgroundColor);
+    svg.style('border', borderColor);
 
     const data = await response.json();
 
-    let margin = 100;
-    let ringInterval = 50;
+    let margin = 20;
+    let ringInterval = 20;
     let centerX = window.innerWidth / 2;
     let centerY = window.innerHeight / 2;
 
@@ -47,9 +55,10 @@ async function fetchDataAndProcess() {
       .attr("r", (d, i) => margin + i * ringInterval)
       .attr("cx", centerX)
       .attr("cy", centerY)
-      .attr("stroke", "orange")
-      .attr("stroke-width", "2")
+      .attr("stroke", (d, i) => d3.interpolateRainbow(i / data.length)) // Vary the stroke color
+      .attr("stroke-width", "7")
       .attr("fill", "none")
+      .style("opacity", 0.8) // Adjust opacity for the rings
       .on("mouseover", function (event, d) {
         tooltip.style("visibility", "visible") // Show the tooltip on hover.
           .html("Begin Time: " + d.beginTime + ", Class Type: " + d.classType)
@@ -59,6 +68,14 @@ async function fetchDataAndProcess() {
       .on("mouseout", function () {
         tooltip.style("visibility", "hidden"); // Hide the tooltip when not hovering.
       });
+
+      // Styling the tooltip
+    tooltip.style("background-color", "rgba(255, 255, 255, 0.9)");
+    tooltip.style("border", "1px solid #666");
+    tooltip.style("border-radius", "5px");
+    tooltip.style("padding", "10px");
+    tooltip.style("font-family", "Arial, sans-serif")
+
   } catch (error) {
     console.error('Error fetching data:', error);
   }
