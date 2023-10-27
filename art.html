@@ -7,30 +7,31 @@
 
   <link rel="stylesheet" href="styles.css">
   <script src="nasa2.js"></script>
+  <script src="nasa.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
 </head>
 <body class="art-body">
-  <section id="art-section">
-    <header>
-      <div class="design-div">
-        
-        <a class="back-link" href="javascript:history.go(-1)">
-          <h1 class="go-back">
-            Go Back
-          </h1>
-        </a>
-  
-        <div class="design-heading">
-          <h1 class="data-title">
-            Data Art
-          </h1>
+  <header>
+    <a class="back-link" href="javascript:history.go(-1)">
+      <h1 class="go-back">
+        Go Back
+      </h1>
+    </a>
 
-          <div id="body"></div>
-        </div>
-      </div>
-    </header>
-  </section>
+    <div class="design-heading">
+      <h1 class="data-title">
+        Data Art
+      </h1>
+    </div>
+  </header>
+
+  <main class="data-art">
+    <div id="body"></div>
+
+    <div class="flareRing"></div>
+  </main>
 </body>
 
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>

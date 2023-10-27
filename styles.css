@@ -14,6 +14,11 @@
   background-color: #fafafa;
 }
 
+.art-body
+{
+  margin: 50px;
+}
+
 
 .body::-webkit-scrollbar,
 .design-body::-webkit-scrollbar
@@ -716,8 +721,7 @@ section#design-section
 
 section#art-section
 {
-  height: 100vh;
-  padding: 100px;
+  padding: 50px;
 }
 
 
@@ -958,3 +962,7 @@ section#art-section
 
 
 
+.data-art
+{
+  margin-left: 100px;
+}

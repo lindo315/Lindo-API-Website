@@ -12,12 +12,12 @@ async function fetchDataAndProcess() {
     // Define a custom color scale for class types
     const colorScale = d3.scaleOrdinal()
       .domain(data.map(function (d) { return d.classType; }))
-      .range(['#2ca02c', '#ff7f0e', '#d62728', '#9467bd', '#1f77b4', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']);
+      .range(['#FC6600', '#FF8C00', '#FF6347', '#FF4500', '#FFD700', '#FFB90F', '#FFD700', '#FFA500', '#FF7F50', '#FF6B4']);
 
     // Set dimensions and margins of the graph
-    var margin = { top: 50, right: 30, bottom: 80, left: 100 },
-      width = 1000 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
+    var margin = { top: 100, right: 30, bottom: 80, left: 200 },
+      width = 1100 - margin.left - margin.right,
+      height = 600 - margin.top - margin.bottom;
 
     // Append the svg object to the body of the page
     var svg = d3.select("body")
@@ -25,12 +25,14 @@ async function fetchDataAndProcess() {
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      .style("margin", "500px");
 
     svg.append("rect")
       .attr("width", "87%")
-      .attr("height", "86%")
-      .attr("fill", "#ADD8E6"); // cold blue
+      .attr("height", "75%")
+      .attr("fill", "#ADD8E6") // cold blue
+      .style("opacity", "0.9");
 
     // Build X scales and axis
     var x = d3.scaleBand()
@@ -46,7 +48,8 @@ async function fetchDataAndProcess() {
       .call(d3.axisBottom(x))
       .selectAll("text") // Rotate y-axis labels for better readability
     .attr("transform", "rotate(-45)")
-    .style("text-anchor", "end");
+    .style("text-anchor", "end")
+    .style("fill", "grey");
 
 
     // Define a custom sorting order for class types
@@ -65,7 +68,8 @@ async function fetchDataAndProcess() {
     .call(d3.axisLeft(y).tickSize(0))
     .selectAll("text") // Rotate y-axis labels for better readability
     .attr("transform", "rotate(-45)")
-    .style("text-anchor", "end");
+    .style("text-anchor", "end")
+    .style("fill", "grey");
 
     // Create a tooltip
     var tooltip = d3.select("body")
@@ -73,17 +77,18 @@ async function fetchDataAndProcess() {
       .style("position", "absolute")
       .style("visibility", "hidden")
       .style("background", "white")
-      .style("padding", "5px");
+      .style("padding", "5px")
+      .style("opacity", "0.8")
+      .style("border-radius", "10px");
 
     // Add the squares
     svg.selectAll()
       .data(data, function (d) { return d.beginTime + ':' + d.classType; })
       .enter()
-      .append("rect")
-      .attr("x", function (d) { return x(d.beginTime); })
-      .attr("y", function (d) { return y(d.classType); })
-      .attr("width", x.bandwidth())
-      .attr("height", y.bandwidth())
+      .append("circle") // Use circles instead of rectangles
+      .attr("cx", function (d) { return x(d.beginTime) + x.bandwidth() / 2; }) // Set x position to the middle of the band
+      .attr("cy", function (d) { return y(d.classType) + y.bandwidth() / 2; }) // Set y position to the middle of the band
+      .attr("r", Math.min(x.bandwidth(), y.bandwidth()) / 2)
       .style("fill", function (d) { return colorScale(d.classType); }) // Set the square color based on class type
       .on("mouseover", function () { return tooltip.style("visibility", "visible"); })
       .on("mousemove", function (event, d) {
