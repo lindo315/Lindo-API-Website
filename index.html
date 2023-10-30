@@ -35,7 +35,7 @@
       <div class="navbar">
         <div class="logoDiv">
           <a class="logo" href="#home">
-            S.L.R
+            <img class="home-png" title="Go to Home" src="sunLogo.png">
           </a>
         </div>
 
@@ -213,49 +213,11 @@
           </div>
         </div>
       </div>
-
-
-      <div class="data-container">
-        <div class="d-t1 data-col">
-          <p>
-            Active Solar Flares
-          </p>
-        </div>
-
-        <div class="d-t2 data-col">
-          The graph below illustrates how frequent solar flares have occured over the past 27 days, each graph a span of 9 days fetching data from the API as points.
-        </div>
-        <div class="d-t3 data-col">
-          <h1>
-            Active Graph
-          </h1>
-
-          <!--Slider-->
-          <input type="range" min="1" max="3" value="1" class="slider" id="graphSlider">
-
-          <!--Graph containers-->
-          <div id="graph1" class="graph-container">
-            <div id="active1-graph"></div>
-          </div>
-
-          <div id="graph2" class="graph-container" style="display: none;">
-            <div id="active2-graph"></div>
-          </div>
-
-          <div id="graph3" class="graph-container" style="display: none;">
-            <div id="active3-graph"></div>
-          </div>
-
-          <div id="active-graph"></div>
-          <div id="live-data-content" class="tooltip"></div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section id="sources">
       <div class="source-text">
-        <p class="source">
+        <p class="solar-about">
           SOURCES
         </p>
 
@@ -266,14 +228,20 @@
 
       <div class="sources-container">
         <div class="grid-item">
-          <a class="grid-link" href="design.html">
-            Design Section
+          <a class="grid-link" href="active.html">
+            Interactive Data
           </a>
         </div>
 
         <div class="grid-item">
           <a class="grid-link" href="art.html">
             Data Art
+          </a>
+        </div>
+
+        <div class="grid-item">
+          <a class="grid-link" href="design.html">
+            Design Section
           </a>
         </div>
 
@@ -286,7 +254,6 @@
     </section>
   </main>
   
-
-  <script src="slider.js" defer></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 </body>
 </html>

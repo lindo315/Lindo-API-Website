@@ -29,8 +29,8 @@ async function fetchDataAndProcess() {
       .style("margin", "500px");
 
     svg.append("rect")
-      .attr("width", "87%")
-      .attr("height", "75%")
+      .attr("width", "79.2%")
+      .attr("height", "70%")
       .attr("fill", "#ADD8E6") // cold blue
       .style("opacity", "0.9");
 
