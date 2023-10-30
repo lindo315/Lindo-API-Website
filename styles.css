@@ -586,7 +586,7 @@ section#sources
 
   width: 100px; 
   height: 100px; 
-  background-image: url(sun_8014367.png); 
+  background-image: url(./images/sun_8014367.png); 
   background-size: cover;
   color: white; 
   background-position: center; 
@@ -596,7 +596,7 @@ section#sources
 {
   width: 100px;
   height: 100px;
-  background-image: url(sun_3258276.png);
+  background-image: url(./images/sun_3258276.png);
   background-size: cover;
   background-position: center;
 }
@@ -605,7 +605,7 @@ section#sources
 {
   width: 100px;
   height: 100px;
-  background-image: url(sun_7868485.png);
+  background-image: url(./images/sun_7868485.png);
   background-size: cover;
   background-position: center;
 }
@@ -614,7 +614,7 @@ section#sources
 {
   width: 100px;
   height: 100px;
-  background-image: url(sun_1146072.png);
+  background-image: url(./images/sun_1146072.png);
   background-size: cover;
   background-position: center;
 }
@@ -623,7 +623,7 @@ section#sources
 {
   width: 100px;
   height: 100px;
-  background-image: url(greenhouse-effect_5545693.png);
+  background-image: url(./images/greenhouse-effect_5545693.png);
   background-size: cover;
   background-position: center;
 }
