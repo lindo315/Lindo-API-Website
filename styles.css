@@ -14,6 +14,13 @@
   background-color: #fafafa;
 }
 
+.footer
+{
+  background-color: #cbcbcb;
+  text-align: center;
+  padding: 80px;
+}
+
 .art-body
 {
   margin: 50px;
