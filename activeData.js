@@ -106,7 +106,7 @@ async function fetchDataAndProcess() {
       .attr("text-anchor", "left")
       .style("font-size", "22px")
       .style("fill", "grey")
-      .text("Solar Flare Classes Heatmap");
+      .text("Solar Flare Classes Plot");
 
       // Add subtitle to the graph
       svg.append("text")
@@ -116,7 +116,7 @@ async function fetchDataAndProcess() {
       .style("font-size", "14px")
       .style("fill", "grey")
       .style("max-width", 400)
-      .text("Solar flare classes organized by your custom order.");
+      .text("Classes vs Dates");
 
   } catch (error) {
     console.error('Error fetching data:', error);

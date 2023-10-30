@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Posts</title>
 
+  <link href="https://fonts.cdnfonts.com/css/nasa" rel="stylesheet">
+  <style>@import url('https://fonts.cdnfonts.com/css/nasa');</style>
+
+  <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
+  <style>@import url('https://fonts.cdnfonts.com/css/helvetica-neue-5');</style>
+
   <link rel="stylesheet" href="styles.css">
   <script src="scroll.js"></script>
   <script src="drivenNav.js"></script>
@@ -17,7 +23,9 @@
         <button id="homeButton" title="Go to Home" class="image-button" style="background-image: url('backHome.png');"></button>
   
         <div class="design-heading">
-          <h1 class="data-title">
+          <h1 class="solar-about">
+            <button id="designButton" title="Design Section" class="image-button" style="background-image: url('leftNav.png');"></button>
+
             Blog Posts
           </h1>
         </div>
@@ -316,6 +324,50 @@
           Kowieski, J. (2022). What is interactive data visualization and what are the benefits of
           using it?. ThoughSpot. URL: https://www.thoughtspot.com/data-trends/data-
           visualization/interactive-data-visualization
+        </h6>
+      </div>
+
+
+      <div class="post3">
+        <h2 class="title">
+          Blog Post 4: Data-Driven Artwork
+        </h2>
+
+        <h3 class="text">
+          In this final website submission, the artwork I decided to present explores the range at which solar flares occur and the different classes of each occurring solar flare. The artwork aims to present this data in a visually appealing way while displaying each solar event in an artistic yet neatly structured way. I used a NASA API to fetch sets of data from each occurring solar flare, from the dates and times at which they begin, to the classes. I believe that this data is important to take note of since each occurring class (solar flare) teaches us more about the sun's behavior and what to expect from it over time. Since some solar flare classes can prove to be a threat to Earth's atmosphere and all electrical devices.
+        </h3>
+
+        <h4 class="text">
+          What Is Data Art:
+          In my own constructed definition, it's a creative practice that uses data sets to produce expressive, visually engaging, and often emotion-evoking works of art. Unlike traditional data visualizations, which focus on presenting data clearly and analytically, data art shifts the emphasis toward aesthetic and creative expression. It also aims to convey a narrative or elicit emotions and thoughts in its audience, often transcending the boundaries of conventional charts and graphs. This definition is a mix of external research and my way of simplifying the term in a way that I would understand. And so, I attempted to create something that falls under this definition, which proved to be challenging at first with the data I had. However, I ended up finding a way to use said data to create something similar to what the definition would present or define.
+
+        </h4>
+
+        <h5 class="text">
+          The Creation Process:
+          The API I chose is only limited to two sets of usable data, the dates of solar flare occurrences and their classes. I looked up a couple of ways to create something artistic using code while taking into consideration the data I had. I wanted to implement my API in my art, but the examples I came across were either too advanced or had nothing to do with APIs. So, I first created a colorful graph to pass as my data art, only to find out it was not considered to be artistic and was technically data visualization. With this in mind, I knew that with the little time I had left, I had to come up with something quickly. Something different and unexpected but is also visually pleasing to look at. Since I was dealing with solar flares, I wanted to create something that could visualize their power (class) and how old they are (dates at which they occurred).
+          I then created solar rings with different colors depicting different occurring solar flares from the sun, and each color is how old the solar flare is. Rings that have warmer colors depict recently occurred solar flares and the oldest ones have colder colors. I wanted to make it obvious to the eyes that the solar flares range in age and using colors in that sense was one way of doing that. In my initial idea, I wanted to create a heatmap, showing older solar flares as being bluer and the latest ones being red. But I could not go forth with that plan because it would have taken time to figure it out and it was a tough process trying to make a heatmap with the data I had. 
+
+          Inspiration:
+          The diagram below shows four different illustrations of the Solar Orbiter's position. The ring illustration was something I liked and thought it would be a good idea to implement since my heatmap was not successful.
+          The one below was for my initial idea, and so I decided to mix both ideas and make something entirely different and new. This diagram shows the effects of solar flares on Earth.
+        </h5>
+
+        <h6 class="text">
+          Intent:
+          Viégas and Wattenberg in their paper discuss the work of artists like Jason Salavon and Golan Levin, emphasizing their intent in using data for artistic purposes. Jason Salavon, for instance, explores collective human experiences through the aggregation of data, transcending the traditional boundaries of visualizations to create art. Likewise, Golan Levin uses data and visualization to encourage the exploration of cultural relationships and behavioral patterns, and so, both these artists seek to use data to create “thought-provoking” art. In comparison, I sought to follow their principle and do something unconventional. I aimed to transform data about solar flares into a visually appealing piece that changes how we think about solar flares and the sun's behavior as a result. Just like the artists mentioned, I repurposed scientific data and techniques to create art with intent. The intent was to not just display information but to invite viewers to engage with the concept of solar flares, their class, and their age through a creative lens. This aligns with the artist's goal of guiding analytical reasoning and encouraging a new way of thinking and interpreting data.
+          Conclusion:
+          In the process of making my website, I believe I've finally merged solar data with the art of visualization. By encapsulating the intricacies of solar flares into visually captivating artwork, I've attempted to shed new light on these celestial events. I also believe this paralleled the intentions of artists like Jason Salavon and Golan Levin, who use data as a means to evoke thought and emotion. I aimed to do more than convey information; I wanted to encourage viewers to contemplate solar flares using the API data I chose. Much like these artists, I repurposed data with the intent to inspire, offering a unique perspective for viewers to rethink their perception of the sun's behavior and its connection to our planet.
+
+        </h6>
+
+        <h6 class="text">
+          REFERENCES:
+          Galanakis, G. (2017). 'Data is Beautiful'. Medium. Available at: https://medium.com/hackernoon/data-is-beautiful-6a7adfceb0db
+          Benzi, K. (2020). 'What is Data Art'. Kirell Benzi. Available at: https://www.kirellbenzi.com/blog/data-art-definition
+          NASA Open APIs (no date). Available at: https://api.nasa.gov/#browseAPI (Accessed: 27 August 2023).
+          Viégas, F.B & Wattenberg, M. (2007). 'Artistic Data Visualization: Beyond Visual Analytics'. In: Schuler, D. (eds), Online Communities and Social Computing. Springer, Berlin, Heidelberg, pp 182 - 191
+
         </h6>
       </div>
       

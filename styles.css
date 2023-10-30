@@ -212,6 +212,18 @@
   font-size: 30px;
 }
 
+.text
+{
+  text-align: center;
+}
+
+
+.design-img
+{
+  width: 800px;
+  height: 400px;
+}
+
 
 .solar,
 .power
