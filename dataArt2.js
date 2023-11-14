@@ -51,11 +51,11 @@ async function fetchDataAndProcess() {
 
     gradient.append('stop')
       .attr('offset', '0%')
-      .style('stop-color', 'blue');
+      .style('stop-color', 'red');
 
     gradient.append('stop')
       .attr('offset', '100%')
-      .style('stop-color', 'green');
+      .style('stop-color', 'orange');
 
     svg.selectAll('.interactiveCircle')
       .data(data)

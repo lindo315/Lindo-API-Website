@@ -18,6 +18,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//TO DATA ART 2
+document.addEventListener("DOMContentLoaded", function () {
+  const artButton = document.getElementById("art2Button");
+
+    artButton.addEventListener("click", function () {
+      // Redirect to the "home" script (replace 'home.html' with the actual script name).
+      window.location.href = 'art2.html';
+  });
+});
+
 //BACK TO INTERACTIVE DATA
 document.addEventListener("DOMContentLoaded", function () {
   const artButton = document.getElementById("intButton");
@@ -45,5 +55,15 @@ document.addEventListener("DOMContentLoaded", function () {
     artButton.addEventListener("click", function () {
       // Redirect to the "home" script (replace 'home.html' with the actual script name).
       window.location.href = 'blogposts.html';
+  });
+});
+
+//TO ESSAY SECTION
+document.addEventListener("DOMContentLoaded", function () {
+  const artButton = document.getElementById("essayButton");
+
+    artButton.addEventListener("click", function () {
+      // Redirect to the "home" script (replace 'home.html' with the actual script name).
+      window.location.href = 'essay.html';
   });
 });
