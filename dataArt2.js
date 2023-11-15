@@ -8,13 +8,13 @@ function createSVG() {
     .style('display', 'flex')
     .style('justify-content', 'center')
     .style('align-items', 'center')
-    .style('height', '100vh'); 
+    .style('height', '100vh');
 
   // Append the SVG to the container
   svg = container
     .append('svg')
     .attr('width', '100%')
-    .attr('height', '100%'); 
+    .attr('height', '100%');
 
   tooltip = d3.select('body')
     .append('div')
@@ -64,7 +64,7 @@ async function fetchDataAndProcess() {
       .attr('class', 'interactiveCircle')
       .attr('cx', (d, i) => i * 100 + 50) // Adjust the x position for visibility
       .attr('cy', '50%')
-      .attr('r', '50%')
+      .attr('r', '10%')
       .style('fill', 'url(#interactiveGradient)')
       .on('mouseover', function (event, d) {
         const { beginTime, classType } = d;
@@ -76,7 +76,11 @@ async function fetchDataAndProcess() {
       })
       .on('mouseout', function () {
         tooltip.style('visibility', 'hidden');
-      });
+      })
+      .transition()
+      .duration(1000)
+      .attr('r', '50%')
+      .style('fill', 'url(#interactiveGradient)');
 
     tooltip.style('background-color', 'rgba(255, 255, 255, 0.9)');
     tooltip.style('border', '1px solid #666');
@@ -90,9 +94,3 @@ async function fetchDataAndProcess() {
 
 // Fetch data and process
 fetchDataAndProcess();
-
-// Add mousemove event to make the circle interactive
-svg.on('mousemove', function (event) {
-  const [x, y] = d3.pointer(event);
-  updateGradient(x, y);
-});
