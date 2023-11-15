@@ -6,22 +6,19 @@
   <title>Design Section</title>
 
   <link href="https://fonts.cdnfonts.com/css/nasa" rel="stylesheet">
-  <style>@import url('https://fonts.cdnfonts.com/css/nasa');</style>
-
   <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
-  <style>@import url('https://fonts.cdnfonts.com/css/helvetica-neue-5');</style>
+  <link rel="stylesheet" href="styles.css">
+
 
   <link rel="stylesheet" href="styles.css">
-  <script src="scroll.js"></script>
-  <script src="drivenNav.js"></script>
 
 </head>
 <body class="design-body">
   <section id="design-section">
     <header>
       <div class="design-div">
-        
-        <button id="homeButton" title="Go to Home" class="image-button" style="background-image: url('backHome.png');"></button>
+        <nav>
+          <button id="homeButton" title="Go to Home" class="image-button" style="background-image: url('backHome.png');"></button>
   
         <div class="design-heading">
           <h1 class="data-title">
@@ -36,6 +33,7 @@
             This is my design section, showing the wireframes and planning of the website.
           </h2>
         </div>
+        </nav>
       </div>
     </header>
   
@@ -46,65 +44,54 @@
             Wireframes
           </p>
   
-          <div class="wireframe-div">
-            <p class="d-title">
-              Homepage
-            </p>
+          <figure class="homepage-div">
+            <figcaption>
+                <p class="d-title">Homepage</p>
+            </figcaption>
+            <img class="design-img" src="Homepage.jpg" alt="Homepage Wireframe">
+          </figure>
 
-            <div class="homepage-div">
-              <img class="design-img" src="Homepage.jpg">
-            </div>
-          </div>
+          <figure class="homepage-div">
+            <figcaption>
+                <p class="d-title">About Page</p>
+            </figcaption>
+            <img class="design-img" src="aboutpage.jpg" alt="About Wireframe">
+          </figure>
+
+          <figure class="homepage-div">
+            <figcaption>
+                <p class="d-title">Solar Flares Page</p>
+            </figcaption>
+            <img class="design-img" src="solarflarepage.jpg" alt="Solar Flare Page Wireframe">
+          </figure>
   
-          <div class="wireframe-div">
-            <p class="d-title">
-              About Page
-            </p>
-
-            <div class="homepage-div">
-              <img class="design-img" src="aboutpage.jpg">
-            </div>
-          </div>
+          <figure class="homepage-div">
+            <figcaption>
+                <p class="d-title">Data Page</p>
+            </figcaption>
+            <img class="design-img" src="data1page.jpg" alt="Data Page Wireframe">
+          </figure>
   
-          <div class="wireframe-div">
-            <p class="d-title">
-              Solar Flares Page
-            </p>
+          <figure class="homepage-div">
+            <figcaption>
+                <p class="d-title">Interactive Data</p>
+            </figcaption>
+            <img class="design-img" src="interactivePage.png" alt="Interactive Page Wireframe">
+          </figure>
 
-            <div class="homepage-div">
-              <img class="design-img" src="solarflarepage.jpg">
-            </div>
-          </div>
-  
-          <div class="wireframe-div">
-            <p class="d-title">
-              Data Page
-            </p>
+          <figure class="homepage-div">
+            <figcaption>
+                <p class="d-title">Data Art</p>
+            </figcaption>
+            <img class="design-img" src="dataArt.png" alt="Data Art Wireframe">
+          </figure>
 
-            <div class="homepage-div">
-              <img class="design-img" src="data1page.jpg">
-            </div>
-          </div>
-
-          <div class="wireframe-div">
-            <p class="d-title">
-              Interactive Data
-            </p>
-
-            <div class="homepage-div">
-              <img class="design-img" src="interactivePage.png">
-            </div>
-          </div>
-
-          <div class="wireframe-div">
-            <p class="d-title">
-              Data Art
-            </p>
-
-            <div class="homepage-div">
-              <img class="design-img" src="dataArt.png">
-            </div>
-          </div>
+          <figure class="homepage-div">
+            <figcaption>
+                <p class="d-title">Data Art 2</p>
+            </figcaption>
+            <img class="design-img" src="dataArt2.png" alt="Data Art 2 Wireframe">
+          </figure>
         </div>
       </div>
 
@@ -224,7 +211,7 @@
     
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footerD">
       <p class="title">My Goal for this Website</p>
         
       <p class="text">
@@ -232,9 +219,12 @@
       </p>
 
       <button id="scrollUpButton">&#171;</button>
-      <script src="scrollup.js"></script>
     </footer>
   </section>
   
 </body>
+
+<script src="scroll.js"></script>
+<script src="drivenNav.js"></script>
+<script src="scrollup.js"></script>
 </html>

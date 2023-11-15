@@ -7,63 +7,65 @@
   <meta name="keywords" content="space weather, solar activity, cosmic events, space phenomena">
   <title>Solar Flare Website</title>
 
+  <meta name="author" content="Lindokuhle Dlamini">
+  <meta name="robots" content="index, follow"> <!-- Specify whether search engines should index the page -->
+  
+  <!-- Open Graph Protocol (OGP) tags for social media sharing -->
+  <meta property="og:title" content="Solar Flare Website">
+  <meta property="og:description" content="Get the latest solar events, and cosmic phenomena updates on my website.">
+  <meta property="og:image" content="URL to an image for social media sharing">
+  <meta property="og:url" content="URL of the page">
+  <meta property="og:type" content="website">
+
   <link href="https://fonts.cdnfonts.com/css/nasa" rel="stylesheet">
-  <style>@import url('https://fonts.cdnfonts.com/css/nasa');</style>
-
   <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
-  <style>@import url('https://fonts.cdnfonts.com/css/helvetica-neue-5');</style>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 
   <link rel="stylesheet" href="styles.css">
 
   
-  <script src="diagrams.js"></script>
-  <script src="diagrams2.js"></script>
-  <script src="diagram5.js"></script>
-  <script src="scroll.js"></script>
-  <script src="indicator.js"></script>
-  <script src="navigation.js"></script>
+  
   
 </head>
 <body class="body">
   <header>
     <!--TOP NAVBAR-->
-    <div id="id-navigation">
-      <div class="navbar">
-        <div class="logoDiv">
-          <a class="logo" href="#home">
-            <img class="home-png" title="Go to Home" src="sunLogo.png">
-          </a>
+    <nav>
+      <div id="id-navigation">
+        <div class="navbar">
+          <div class="logoDiv">
+            <a class="logo" href="#home">
+              <img class="home-png" title="Go to Home" src="sunLogo.png">
+            </a>
+          </div>
+  
+          <ul class="link-list">
+            <li class="list"><a class="a" href="#home">Home</a></li>
+            <li class="list"><a class="a" href="#about">About</a></li>
+            <li class="list"><a class="a" href="#more">Flares</a></li>
+            <li class="list"><a class="a" href="#data">Data</a></li>
+            <li class="list"><a class="a" href="#sources">Extras</a></li>
+          </ul>
+          
+          <div class="toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+          </div>
         </div>
-
-        <ul class="link-list">
+  
+        <div class="dropdown-menu">
           <li class="list"><a class="a" href="#home">Home</a></li>
-          <li class="list"><a class="a" href="#about">About</a></li>
-          <li class="list"><a class="a" href="#more">Flares</a></li>
-          <li class="list"><a class="a" href="#data">Data</a></li>
-          <li class="list"><a class="a" href="#sources">Extras</a></li>
-        </ul>
-        
-        <div class="toggle-btn">
-          <i class="fa-solid fa-bars"></i>
+            <li class="list"><a class="a" href="#about">About</a></li>
+            <li class="list"><a class="a" href="#more">Flares</a></li>
+            <li class="list"><a class="a" href="#data">Data</a></li>
+            <li class="list"><a class="a" href="#sources">Sources</a></li>
         </div>
       </div>
+    </nav>
 
-      <div class="dropdown-menu">
-        <li class="list"><a class="a" href="#home">Home</a></li>
-          <li class="list"><a class="a" href="#about">About</a></li>
-          <li class="list"><a class="a" href="#more">Flares</a></li>
-          <li class="list"><a class="a" href="#data">Data</a></li>
-          <li class="list"><a class="a" href="#sources">Sources</a></li>
-      </div>
-    </div>
-  </header>
-
-  <header>
-    
+    <!--HOME SECTION-->
     <section id="home">
       <div class="text-overlay">
         <h1 class="solar">
@@ -78,6 +80,7 @@
   </header>
 
   <main>
+    <!--ABOUT SECTION-->
     <section id="about">
       <div class="box-div1"></div>
       <div class="box-div2"></div>
@@ -151,16 +154,13 @@
         </div>
       </div>
 
-      <div class="image-div">
-        <p class="whatSolar">
-          What does this look like?
-        </p>
-
-        <p class="data-info">
-          Below is a diagram illustrating the process of a <span class="orange-root">Solar Flare</span> as it travels throughout space. During this phase, it is referred to as a <span class="orange-root">Solar Wind</span>.
-        </p>
-        <img class="geo-image" src="solarwind.jpg">
-      </div>
+      <figure class="image-div">
+        <figcaption>
+            <p class="whatSolar">What does this look like?</p>
+            <p class="data-info">Below is a diagram illustrating the process of a <span class="orange-root">Solar Flare</span> as it travels throughout space. During this phase, it is referred to as a <span class="orange-root">Solar Wind</span>.</p>
+        </figcaption>
+        <img class="geo-image" src="solarwind.jpg" alt="Solar Wind Diagram">
+    </figure>
       
     </section>
 
@@ -183,7 +183,7 @@
         </div>
 
         <div class="d-t2 data-col">
-          The graph below illustrates daily solar flares that have accured over the past few days. The scatter plot features the times of the day on the y-axis and the dates on the x-axis. With each solar event having a begin time, a peak time, and an end time for each occurance.
+          The graph below illustrates daily solar flares that have occurred over the past few days. The scatter plot features the times of the day on the y-axis and the dates on the x-axis. With each solar event having a begin time, a peak time, and an end time for each occurance.
         </div>
         <div class="d-t3 data-col">
           <h2>
@@ -267,10 +267,16 @@
   </main>
 
   <footer class="footer">
-    <p class="text">&copy; 2023 Space Data by NASA. All rights reserved.</p>
-    <p class="text">&copy; Images taken from: freepink.com<p>
+    <address>&copy; 2023 Space Data by NASA. All rights reserved.</address>
+    <address>Images taken from: freepink.com</address>
 </footer>
   
   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="diagrams.js"></script>
+  <script src="diagrams2.js"></script>
+  <script src="diagram5.js"></script>
+  <script src="scroll.js"></script>
+  <script src="indicator.js"></script>
+  <script src="navigation.js"></script>
 </body>
 </html>

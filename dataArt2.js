@@ -8,13 +8,13 @@ function createSVG() {
     .style('display', 'flex')
     .style('justify-content', 'center')
     .style('align-items', 'center')
-    .style('height', '100vh'); // Ensure it takes up the entire viewport height
+    .style('height', '100vh'); 
 
   // Append the SVG to the container
   svg = container
     .append('svg')
     .attr('width', '100%')
-    .attr('height', '100%'); // You can adjust the value as needed
+    .attr('height', '100%'); 
 
   tooltip = d3.select('body')
     .append('div')
@@ -29,7 +29,7 @@ function createSVG() {
 
 async function fetchDataAndProcess() {
   try {
-    // Fetch data from your specific NASA API
+    // Fetch data from NASA API
     const url = 'https://api.nasa.gov/DONKI/FLR?startDate=yyyy-MM-dd&endDate=yyyy-MM-dd&api_key=FYw9fNRv8ac2av2x7fDwTIpfoxqIdBWiQ6TbM7u9';
     const response = await fetch(url);
 

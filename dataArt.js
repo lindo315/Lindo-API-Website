@@ -8,13 +8,13 @@ function createSVG() {
     .style('display', 'flex')
     .style('justify-content', 'center')
     .style('align-items', 'center')
-    .style('height', '100vh'); // Ensure it takes up the entire viewport height
+    .style('height', '100vh'); 
 
   // Append the SVG to the container
   svg = container
     .append('svg')
     .attr('width', '100%')
-    .attr('height', '100%') // You can adjust the value as needed
+    .attr('height', '100%') 
 
 
   // Create a group to hold all the rings and dots

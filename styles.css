@@ -21,6 +21,12 @@
   padding: 80px;
 }
 
+.footerD
+{
+  text-align: center;
+  padding: 80px;
+}
+
 .art-body
 {
   margin: 50px;
@@ -74,7 +80,7 @@
 
 #id-navigation
 {
-  background-image: linear-gradient(to right, #530f1e, #051427);
+  background-image: linear-gradient(to right, #051427,#000000);
   backdrop-filter: blur(10px);
 }
 
